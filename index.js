@@ -25,7 +25,6 @@ function wrap(content, o) {
 }
 
 function youtube(video, o) {
-  o = o || {};  
   var styling = o.useStyle === false
     ? {}
     : {
@@ -76,12 +75,12 @@ module.exports = {
   blocks: {
     vimeo: {
       process: function(block) {
-        return vimeo(block.body, block.kwargs);
+        return vimeo(block.body, block.kwargs || {});
       }
     },
     youtube: {
       process: function(block) {
-        return youtube(block.body, block.kwargs);
+        return youtube(block.body, block.kwargs || {});
       }
     }
   }
