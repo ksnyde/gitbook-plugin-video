@@ -19,8 +19,6 @@ function wrap(content, o) {
   var divStart = '<div class="videoclips-wrapper" style="' + style(config) + '">';
   var divEnd = '</div>';
 
-  // console.log('vimeo content:', divStart + content + divEnd);
-
   return divStart + content + divEnd;
 }
 
@@ -37,7 +35,7 @@ function youtube(video, o) {
           left: 0
         };
 
-  var allowfullscreen = o.allowfullscreen === false ? '' : 'allowfullscreen';
+  var allowfullscreen = o.allowfullscreen === false ? '' : 'webkitallowfullscreen mozallowfullscreen allowfullscreen';
 
   return wrap(
     '<iframe class="video youtube-video" style="' +
