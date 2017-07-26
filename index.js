@@ -1,11 +1,9 @@
 
 var dasherize = require('dasherize');
 
-function style(config, o) {
-  return o.useStyle === false
-    ? ''
-    : Object.keys(config).reduce(function(agg, key) {
-        return agg + '; ' + key + ': ' + config[key];
+function style(config) {
+  return Object.keys(config).reduce(function(agg, key) {
+        return agg + '; ' + dasherize(key) + ': ' + config[key];
     }, '');
 }
 
@@ -20,6 +18,8 @@ function wrap(content, o) {
     };
   var divStart = '<div class="videoclips-wrapper" style=' + style(config) + ">";
   var divEnd = '</div>';
+
+  // console.log('vimeo content:', divStart + content + divEnd);
 
   return divStart + content + divEnd;
 }
@@ -51,7 +51,6 @@ function youtube(video, o) {
 }
 
 function vimeo(video, o) {
-  o = o || {};
   var styling = o.useStyle === false
   ? {}
   : {
@@ -62,6 +61,7 @@ function vimeo(video, o) {
     top: 0,
     left: 0
   };
+  console.log('vimeo opts: ', o);
   return wrap(
     '<iframe class="vimeo-video" style="' +
     style(styling) +
@@ -75,6 +75,7 @@ module.exports = {
   blocks: {
     vimeo: {
       process: function(block) {
+        console.log('params:', block.kwargs);
         return vimeo(block.body, block.kwargs || {});
       }
     },

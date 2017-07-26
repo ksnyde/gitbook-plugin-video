@@ -5,7 +5,7 @@ module.exports = {
     sourceType: 'module',
   },
   env: {
-    browser: true
+    browser: false
   },
   rules: {
     "no-console": 0,
