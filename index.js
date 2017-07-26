@@ -16,7 +16,7 @@ function wrap(content, o) {
           paddingBottom: o.paddingBottom || '25px',
           height: 0
         };
-  var divStart = '<div class="videoclips-wrapper" style=' + style(config) + '>';
+  var divStart = '<div class="videoclips-wrapper" style="' + style(config) + '">';
   var divEnd = '</div>';
 
   // console.log('vimeo content:', divStart + content + divEnd);
