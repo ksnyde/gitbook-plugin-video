@@ -2,11 +2,9 @@
 var dasherize = require('dasherize');
 
 function style(config, options) {
-
-
   return options.useStyle === false
     ? ''
-    : Object.keys(config.reduce(function(agg, key)) {
+    : Object.keys(config).reduce(function(agg, key) {
         return agg + '; ' + key + ': ' + config[key];
     }, '');
 }
@@ -20,15 +18,10 @@ function wrap(content, options) {
       paddingBottom: options.paddingBottom || "25px",
       height: 0
     };
-  var divStart = '<div class="videoclips-wrapper" style=' + 
-    options.useStyle === false
-      : ''
-      ? style(config) +
-    ">";
-
+  var divStart = '<div class="videoclips-wrapper" style=' + style(config) + ">";
   var divEnd = '</div>';
 
-  return divStart + style(config)  + '>' + content + divEnd;
+  return divStart + content + divEnd;
 }
 
 function youtube(video, options) {
