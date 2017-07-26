@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-videoclips",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "This is video plugin for gitbook supporting vimeo and youtube",
   "main": "index.js",
   "engines": {

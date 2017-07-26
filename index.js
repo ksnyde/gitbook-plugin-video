@@ -25,6 +25,7 @@ function wrap(content, o) {
 }
 
 function youtube(video, o) {
+  o = o || {};  
   var styling = o.useStyle === false
     ? {}
     : {
@@ -51,6 +52,7 @@ function youtube(video, o) {
 }
 
 function vimeo(video, o) {
+  o = o || {};
   var styling = o.useStyle === false
   ? {}
   : {
