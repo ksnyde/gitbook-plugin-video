@@ -1,21 +1,21 @@
 
 var dasherize = require('dasherize');
 
-function style(config, options) {
-  return options.useStyle === false
+function style(config, o) {
+  return o.useStyle === false
     ? ''
     : Object.keys(config).reduce(function(agg, key) {
         return agg + '; ' + key + ': ' + config[key];
     }, '');
 }
 
-function wrap(content, options) {
-  var config = options.useStyle === false 
+function wrap(content, o) {
+  var config = o.useStyle === false 
     ? {}
     : {
-      position: options.wrapPosition || 'relative',
-      paddingTop: options.paddingTop || "56.25%",
-      paddingBottom: options.paddingBottom || "25px",
+      position: o.wrapPosition || 'relative',
+      paddingTop: o.paddingTop || "56.25%",
+      paddingBottom: o.paddingBottom || "25px",
       height: 0
     };
   var divStart = '<div class="videoclips-wrapper" style=' + style(config) + ">";
@@ -24,20 +24,20 @@ function wrap(content, options) {
   return divStart + content + divEnd;
 }
 
-function youtube(video, options) {
-  var styling = options.useStyle === false
+function youtube(video, o) {
+  var styling = o.useStyle === false
     ? {}
     : {
-      border: options.border || 'none',
-      width: options.width || '100%',
-      height: options.height || '100%',
-      position: options.position || 'absolute',
+      border: o.border || 'none',
+      width: o.width || '100%',
+      height: o.height || '100%',
+      position: o.position || 'absolute',
       top: 0,
       left: 0
     };
 
   var allowfullscreen =
-    options.allowfullscreen === false ? '' : 'allowfullscreen';
+    o.allowfullscreen === false ? '' : 'allowfullscreen';
 
   return wrap(
     '<iframe class="youtube-video" style="' +
@@ -47,17 +47,17 @@ function youtube(video, options) {
     '?rel=0" frameborder="0" ' +
     allowfullscreen +
     '>'
-  , options);
+  , o);
 }
 
-function vimeo(video, options) {
-  var styling = options.useStyle === false
+function vimeo(video, o) {
+  var styling = o.useStyle === false
   ? {}
   : {
-    border: options.border || 'none',
-    width: options.width || '100%',
-    height: options.height || '100%',
-    position: options.position || 'absolute',
+    border: o.border || 'none',
+    width: o.width || '100%',
+    height: o.height || '100%',
+    position: o.position || 'absolute',
     top: 0,
     left: 0
   };
@@ -67,7 +67,7 @@ function vimeo(video, options) {
     '" src="https://player.vimeo.com/video/' +
     video +
     '" frameborder="0"></iframe>'
-  , options);
+  , o);
 }
 
 module.exports = {
