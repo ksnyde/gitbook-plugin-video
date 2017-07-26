@@ -9,18 +9,15 @@ Add it to your `book.json`, then run `gitbook install`:
 
 ```
 {
-    plugins: ["video"]
+    plugins: ["videoclips"]
 }
 ```
 
-You can now add video like a vimeo or youtube (video will be recognize automatically):
+You can now add video from vimeo or youtube (video will be recognize automatically):
 
 ```
 take a look at this video:
 
-1. {% video %}https://www.youtube.com/watch?v=Oru-qw-Faac{% endvideo %}
-2. {% video %}https://vimeo.com/128858567{% endvideo %}
+1. {% vimeo %}Oru-qw-Faac{% endvimeo %}
+2. {% youtube %}128858567{% endyoutube %}
 ```
-
-### How it work you can look on this
-[Video list](http://xgrommx.github.io/rx-book/content/video/index.html)

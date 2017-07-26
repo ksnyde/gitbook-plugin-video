@@ -1,7 +1,7 @@
 {
-  "name": "gitbook-plugin-video",
-  "version": "0.0.3",
-  "description": "This is video plugin for gitbook",
+  "name": "gitbook-plugin-videoclips",
+  "version": "0.1.0",
+  "description": "This is video plugin for gitbook supporting vimeo and youtube",
   "main": "index.js",
   "engines": {
     "gitbook": ">1.x.x"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xgrommx/gitbook-plugin-video.git"
+    "url": "git+https://github.com/ksnyde/gitbook-plugin-videoclips.git"
   },
   "keywords": [
     "video",
@@ -19,10 +19,13 @@
     "youtube",
     "vimeo"
   ],
-  "author": "Denis Stoyanov",
+  "author": "Ken Snyder",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xgrommx/gitbook-plugin-video/issues"
+    "url": "https://github.com/ksnyde/gitbook-plugin-videoclips/issues"
   },
-  "homepage": "https://github.com/xgrommx/gitbook-plugin-video#readme"
+  "homepage": "https://github.com/ksnyde/gitbook-plugin-videoclips#readme",
+  "dependencies": {
+    "dasherize": "^2.0.0"
+  }
 }
