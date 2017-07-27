@@ -43,14 +43,9 @@ function youtube(video, o) {
         };
 
   return wrap(
-    '<iframe class="video youtube-video" style="' +
-      style(styling) +
-      '"' +
-      ' src="https://www.youtube.com/embed/' +
-      video +
-      '?rel=0"' +
-      ' frameborder="0" ' +
-      allowfullscreen(o.allowfullscreen) +
+    '<iframe class="video youtube-video" style="' + style(styling) + '"' +
+      ' src="https://www.youtube.com/embed/' + video + '?rel=0"' +
+      ' frameborder="0" ' + allowfullscreen(o.allowfullscreen) +
       '></iframe>',
     o
   );
@@ -69,14 +64,9 @@ function vimeo(video, o) {
           left: 0
         };
   return wrap(
-    '<iframe class="video vimeo-video" style="' +
-      style(styling) +
-      '"' +
-      ' src="https://player.vimeo.com/video/' +
-      video +
-      '"' +
-      ' frameborder="0" ' +
-      allowfullscreen(o.allowfullscreen) +
+    '<iframe class="video vimeo-video" style="' + style(styling) + '"' +
+      ' src="https://player.vimeo.com/video/' + video + '"' +
+      ' frameborder="0" ' + allowfullscreen(o.allowfullscreen) +
       '></iframe>',
     o
   );
